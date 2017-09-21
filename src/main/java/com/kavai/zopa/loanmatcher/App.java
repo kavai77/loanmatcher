@@ -11,7 +11,7 @@ import com.kavai.zopa.loanmatcher.engine.model.LoanResult;
 
 import java.io.IOException;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
         if (args.length != 2) {
             System.out.println("Two parameters expected: csv file, requested loan");

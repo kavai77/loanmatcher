@@ -13,13 +13,13 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class MonthlyPaymentCalculatorTest {
+public class SummationMonthlyPaymentCalculatorTest {
     private final List<Lender> selectedLenders;
     private final int loanNumberOfMonths;
     private final double requestedAmount;
     private final double expectedMonthlyPayment;
 
-    private MonthlyPaymentCalculator sut;
+    private SummationMonthlyPaymentCalculator sut;
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
@@ -48,8 +48,8 @@ public class MonthlyPaymentCalculatorTest {
         );
     }
 
-    public MonthlyPaymentCalculatorTest(List<Lender> selectedLenders, int loanNumberOfMonths, double requestedAmount,
-                                        double expectedMonthlyPayment) {
+    public SummationMonthlyPaymentCalculatorTest(List<Lender> selectedLenders, int loanNumberOfMonths, double requestedAmount,
+                                                 double expectedMonthlyPayment) {
         this.selectedLenders = selectedLenders;
         this.loanNumberOfMonths = loanNumberOfMonths;
         this.requestedAmount = requestedAmount;
@@ -58,7 +58,7 @@ public class MonthlyPaymentCalculatorTest {
 
     @Before
     public void setUp() throws Exception {
-        sut = new MonthlyPaymentCalculator(loanNumberOfMonths);
+        sut = new SummationMonthlyPaymentCalculator(loanNumberOfMonths);
     }
 
     @Test

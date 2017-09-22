@@ -1,8 +1,15 @@
 package com.kavai.zopa.loanmatcher.engine.model;
 
+import com.opencsv.bean.CsvBindByName;
+
+import java.util.Objects;
+
 public class Lender {
+    @CsvBindByName
     private String lender;
+    @CsvBindByName(required = true)
     private double rate;
+    @CsvBindByName(required = true)
     private double available;
 
     public Lender() {
@@ -36,5 +43,20 @@ public class Lender {
 
     public void setAvailable(double available) {
         this.available = available;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Lender lender1 = (Lender) o;
+        return Double.compare(lender1.rate, rate) == 0 &&
+                Double.compare(lender1.available, available) == 0 &&
+                Objects.equals(lender, lender1.lender);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lender, rate, available);
     }
 }

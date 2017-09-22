@@ -24,6 +24,7 @@ public class EngineModule extends AbstractModule {
         bind(InterestRateSolver.class).to(NewtonRaphsonInterestRateSolver.class);
         bind(LenderSelector.class).to(PriorityQueueBasedLenderSelector.class);
         bind(MarketCSVParser.class).to(OpenCSVBasedParser.class);
+        bind(MonthlyPaymentCalculator.class).to(SummationMonthlyPaymentCalculator.class);
         loadAndBindConfiguration();
     }
 

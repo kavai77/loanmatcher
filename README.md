@@ -25,7 +25,7 @@ The best lenders are the ones with the lowest interest rate. The selection of be
 Binary heap is the best data structure for choosing the m smallest elements from an unsorted list of size n.
 
 The time complexity for building a heap by inserting elements one-by-one O(n*log(n)).
-(There is a more efficient algorithm from Floyd to build a binary heap in O(n) time, but it was not available in Java)
+(There is a more efficient algorithm from Floyd to build a binary heap in O(n) time, but it was not available)
 
 The selection and removal of the head from the heap is O(log n)  
 
